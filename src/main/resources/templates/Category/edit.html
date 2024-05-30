@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Edit Product</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Edit Category</h2>
+            <form th:action="@{/category/update/{id} (id=${category.id})}" th:object="${category}" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" th:value="${category.name}">
+                    <div th:if="${errors != null and errors['name'] != null}" th:style="'color: red;'">
+                        <small th:text="${errors['name']}"></small>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </body>
+
+</html>
