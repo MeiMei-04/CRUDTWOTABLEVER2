@@ -13,6 +13,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Null;
 import java.util.List;
 
@@ -28,12 +30,13 @@ public class Product {
     @NotBlank(message = "Name Can Not Null")
     private String name;
     @Min(value = 1,message = "Price Min 1")
-    private double price;
+    @NotNull(message = "Price Can Not null")
+    private Double price;
     @ManyToOne
     @JoinColumn(name = "id_category",nullable = false)
     private Category category;
 
-    public Product(Long id, String name, double price, Category category) {
+    public Product(Long id, String name, Double price, Category category) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -59,11 +62,11 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
