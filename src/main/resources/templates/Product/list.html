@@ -5,6 +5,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <div th:replace="/Demo/header :: header"></div>
         <div class="container">
             <h2>Product List</h2>
             <table class="table">
@@ -30,5 +31,6 @@
             </table>
             <a href="/product/add" class="btn btn-primary">Add New Product</a>
         </div>
+        <div th:replace="/Demo/footer :: footer"></div>
     </body>
 </html>

@@ -4,6 +4,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <div th:replace="/Demo/header :: header"></div>
         <div class="container">
             <h2>Edit Product</h2>
             <form th:action="@{/product/update/{id} (id = ${product.id})}" method="POST">
@@ -30,5 +31,6 @@
                 <button type="submit" class="btn btn-primary">Save Changes</button>
             </form>
         </div>
+        <div th:replace="/Demo/footer :: footer"></div>
     </body>
 </html>
